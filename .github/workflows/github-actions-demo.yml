@@ -1,4 +1,4 @@
-name: Run Scheduled Python Script
+name: Get New Videos
 
 on:
   schedule:
