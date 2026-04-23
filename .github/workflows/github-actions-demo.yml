@@ -29,3 +29,12 @@ jobs:
         env:
           BOSS_CR_WEBHOOK: ${{ secrets.BOSS_CR_WEBHOOK }}
         run: python notifications.py # Replace with your script name
+      
+      - name: Commit and push database
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add default.db
+          # The '|| exit 0' prevents the action from failing if there are no new videos to commit
+          git commit -m "Automated database update: added new videos" || exit 0
+          git push
