@@ -1,4 +1,4 @@
-bs4==4.13.5
-pandas==2.2.2
-requests==2.32.4
-IPython==7.34.0
+bs4
+pandas
+requests
+IPython
