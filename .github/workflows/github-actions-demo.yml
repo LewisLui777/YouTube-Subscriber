@@ -26,4 +26,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run script
+        env:
+          BOSS_CR_WEBHOOK: ${{ secrets.BOSS_CR_WEBHOOK }}
         run: python notifications.py # Replace with your script name
