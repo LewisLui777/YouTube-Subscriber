@@ -1,1 +1,29 @@
+name: Run Scheduled Python Script
 
+on:
+  schedule:
+    # This example runs every day at 00:00 UTC
+    # Use crontab.guru to help define your schedule
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows you to run the script manually for testing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' # Specify your version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run script
+        run: python notifications.py # Replace with your script name
