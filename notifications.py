@@ -82,4 +82,6 @@ def notification(webhook,video_link = 'https://www.youtube.com/@Bosscr/videos', 
 
 if __name__ == "__main__":
   boss_cr_webhook = os.getenv('BOSS_CR_WEBHOOK')
+  alt_webhook = os.getenv('ALT_WEBHOOK')
   notification(boss_cr_webhook)
+  notification(alt_webhook,video_link = 'https://www.youtube.com/@alt3sevens/videos')
