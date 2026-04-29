@@ -28,7 +28,15 @@ jobs:
       - name: Run script
         env:
           BOSS_CR_WEBHOOK: ${{ secrets.BOSS_CR_WEBHOOK }}
-        run: python notifications.py # Replace with your script name
+        run: |
+          for i in {1..10}; do
+            # Try to run the Python script. If it succeeds, exit the step successfully (exit 0)
+            python notifications.py && exit 0
+            
+            # If it fails, print a warning and wait before trying again
+            echo "Attempt $i failed. Retrying in 15 seconds..."
+            sleep 15
+          done
       
       - name: Commit and push database
         run: |
