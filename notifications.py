@@ -16,7 +16,7 @@ def get_latest_videos(playListId,developerKey):
   request = youtube.playlistItems().list(
       part="snippet",
       playlistId=playListId,
-      maxResults=5
+      maxResults=7
   )
   response = request.execute()
 
