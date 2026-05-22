@@ -78,5 +78,7 @@ if __name__ == "__main__":
   developer_key = os.getenv('DEVELOPER_KEY')
   database_name = 'clashroyale'
   boss_cr_playlist_id = 'UU2PcZfmy7CYrKmFH2-yx_wQ'
+  alt_playlist_id = 'UUoztiDxFnXgqu8ImcemFxnQ'
   
   notification(boss_cr_webhook, boss_cr_playlist_id, database_name, developer_key)
+  notification(alt_webhook, alt_playlist_id, database_name, developer_key)
