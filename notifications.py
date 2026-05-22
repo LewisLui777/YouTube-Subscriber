@@ -6,6 +6,7 @@ from IPython.display import Image, display
 from collections import defaultdict
 import sqlite3
 import os
+from googleapiclient.discovery import build
 
 def get_latest_videos(link = 'https://www.youtube.com/@Bosscr/videos'):
   #Retrieve the HTML from the desired channel
