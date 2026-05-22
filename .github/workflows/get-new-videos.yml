@@ -29,6 +29,7 @@ jobs:
         env:
           BOSS_CR_WEBHOOK: ${{ secrets.BOSS_CR_WEBHOOK }}
           ALT_WEBHOOK: ${{ secrets.ALT_WEBHOOK }}
+          DEVELOPER_KEY : ${{ secrets.DEVELOPER_KEY }}
         run: |
           for i in {1..10}; do
             # Try to run the Python script. If it succeeds, exit the step successfully (exit 0)
